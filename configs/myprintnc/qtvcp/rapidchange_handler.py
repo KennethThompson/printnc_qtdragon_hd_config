@@ -23,7 +23,7 @@
 
 from enum import StrEnum
 from os import path
-import debugpy
+#import debugpy
 import linuxcnc
 import sys
 import hal
