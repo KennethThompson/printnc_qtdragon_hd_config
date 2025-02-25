@@ -895,7 +895,10 @@ class HandlerClass:
     def isMachineMetric(self) -> bool:
         return INFO.MACHINE_IS_METRIC
 
-
+    def btn_systemtool_toggled(self, checked):
+        """Handler for system tool button toggle event"""
+        # Add your button toggle handling logic here
+        pass
     ##############################
     # required class boiler code #
     ##############################
