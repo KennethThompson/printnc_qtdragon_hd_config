@@ -1,14 +1,14 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 671x394+240+226
+wm geometry . 1200x509+240+226
 placeFrames 0.39974937343358397
 set ::ratio 0.39974937343358397
 set ::old_w_leftf 160
 set ::watchlist {
-    pin+arduino8266IR.ir-sensor-in
     pin+motion.digital-in-00
     pin+motion.digital-out-00
     pin+arduino8266.dust-cover-out
+    pin+arduino8266.ir-sensor-in
 }
 set ::workmode watchhal
 set ::watchInterval 100

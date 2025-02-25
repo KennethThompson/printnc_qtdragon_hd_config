@@ -1,5 +1,6 @@
 # Include your customized HAL commands here
 # This file will not be overwritten when you run stepconf again
+#loadusr /home/ken/git-repos/LinuxCNC_ArduinoConnector-1/launch.py
 loadusr -Wn vfd hy_vfd -n vfd -d /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AG0KB7CH-if00-port0 -p none -r 19200
 # Replace ttyUSB0 with the address of your adapter
 
