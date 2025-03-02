@@ -27,6 +27,7 @@ from os import path
 import linuxcnc
 import sys
 import hal
+
 #from subprocess import PIPE, Popen
 #import emccanon
 
@@ -122,6 +123,7 @@ class AtcHalPin(StrEnum):
 
 class ConfigElement(StrEnum):
     ATC_SECTION = 'RAPID_ATC'
+    VERSA_PROBE_SECTION = 'VERSA_PROBE_OPTIONS'
     NUM_POCKETS = 'num_pockets'
     POCKET_OFFSET = 'pocket_offset'
     FIRST_POCKET_X = 'first_pocket_x'
@@ -142,6 +144,8 @@ class ConfigElement(StrEnum):
     SPINDLE_SPEED_DROP = 'spindle_speed_drop'
     IR_ENABLED = 'ir_enabled'
     COVER_ENABLED = 'cover_enabled'
+    VERSA_PROBE_SENSOR_HT = 'ps_probe_height'
+    VERSA_BLOCK_HT = 'ps_block_height'
     
     def __str__(self) -> str:
         return self.value
@@ -166,6 +170,7 @@ class HandlerClass:
         self.PATHS = paths
         self.iniFile = INFO.INI
         self.machineName = self.iniFile.find('EMC', 'MACHINE')
+        self.probeName = self.iniFile.find('PROBE', 'USE_PROBE')
         self.c = hal.component('rapid_atc')
         self.configPath = paths.CONFIGPATH
         self.toolTablePath = path.join(self.configPath, 'tool.tbl')
@@ -235,9 +240,14 @@ class HandlerClass:
             self.c.newpin(AtcHalPin.IR_HAL_DPIN, hal.HAL_S32, hal.HAL_IN)
             self.c.newpin(AtcHalPin.COVER_HAL_DPIN, hal.HAL_S32, hal.HAL_OUT)
             self.c.newpin(AtcHalPin.DUST_COVER_STATE, hal.HAL_BIT, hal.HAL_OUT)
+     
             # Wire periodic update function
             STATUS.connect('periodic', lambda w: self.updatePeriodic())
             STATUS.connect('general', self.dialog_return)
+
+            #pin = self.QHAL.newpin("jog.axis.jogger", QHAL.HAL_BIT, QHAL.HAL_IN)
+            #pin.value_changed.connect(lambda s: self.kb_jog(s, 0, 1, fast = False, linear = True))
+
             
             # UI elements
             self.w.btnSetXYPocketOne.clicked.connect( lambda: self.setXYPocketOne() )
@@ -276,8 +286,8 @@ class HandlerClass:
             '''
             future items, which may never be implemented
             '''
-            self.w.gbToolSetter.setVisible(False)
-            self.w.gbToolSetterTouch.setVisible(False)
+            #self.w.gbToolSetter.setVisible(False)
+            #self.w.gbToolSetterTouch.setVisible(False)
             
             '''
                 Removed columns from tooloffsetview that are extraneous/unused by ATC Logic
@@ -697,6 +707,38 @@ class HandlerClass:
                 lambda: ( self.setCoverEnabled(self.w.btnCoverEnabled.isChecked()))
             )
 
+
+            
+            if self.probeName is not None and self.probeName.lower() == 'versaprobe':
+                self.w.gbVersaProbe.setVisible(True)
+                #align_axis = self.w.MAIN.PREFS_.getpref(ConfigElement.ALIGN_AXIS, 'X', str, ConfigElement.ATC_SECTION)
+                probe_ht = self.w.MAIN.PREFS_.getpref(ConfigElement.VERSA_PROBE_SENSOR_HT, "0", str, ConfigElement.VERSA_PROBE_SECTION)#QHAL.getvalue('qtversaprobe.probeheight')
+                block_ht = self.w.MAIN.PREFS_.getpref(ConfigElement.VERSA_BLOCK_HT, "0", str, ConfigElement.VERSA_PROBE_SECTION)#QHAL.getvalue('qtversaprobe.blockheight')
+                log.debug(f'probe_ht = {probe_ht}')
+                log.debug(f'block_ht = {block_ht}')
+                self.probeHTInput = self.w.leSensorHT
+                self.probeHTInput.setText(probe_ht)
+                self.probeHTInput.setValidator(
+                QtGui.QDoubleValidator(
+                    -5000, # bottom
+                    5000, # top
+                    3, # decimals 
+                    notation=QtGui.QDoubleValidator.StandardNotation
+                ))
+                
+                self.blockHTInput = self.w.leBlockHT
+                self.blockHTInput.setText(block_ht)
+                self.blockHTInput.setReadOnly(True)
+                self.blockHTInput.setValidator(
+                QtGui.QDoubleValidator(
+                    -5000, # bottom
+                    5000, # top
+                    3, # decimals 
+                    notation=QtGui.QDoubleValidator.StandardNotation
+                ))
+
+
+   
             '''
             tool_dict = self.tooldb.get_tools()
             for k, v in tool_dict.items():
@@ -728,6 +770,7 @@ class HandlerClass:
         command.wait_complete()
         command.mdi(s)
         command.wait_complete()
+
 
     def setPinValue(self, pinName:str, pinVal):
         self.c[pinName] = pinVal
@@ -780,7 +823,13 @@ class HandlerClass:
             machine_on = QHAL.getvalue('halui.machine.is-on')
             #if self.irEnabledInput:
             ir_stat = QHAL.getvalue(f'motion.digital-in-0{int(self.irDPinInput.text())}')
-            self.w.ledIRTrigger.setState(bool(ir_stat))
+
+            if self.probeName is not None and self.probeName.lower() == 'versaprobe':
+                block_ht = QHAL.getvalue(f'qtversaprobe.blockheight')
+                self.blockHTInput.setText(str(block_ht))
+                probe_ht = QHAL.getvalue(f'qtversaprobe.probeheight')
+                self.probeHTInput.setText(str(probe_ht))
+
             self.w.gbToolActions.setEnabled((homed & machine_on))
             self.w.gbMacros.setEnabled((homed & machine_on))
             self.w.lblMachineOnNotice.setVisible(not (homed & machine_on))
@@ -789,6 +838,7 @@ class HandlerClass:
             s.poll()
             if s.tool_in_spindle == 0:
                 self.w.lblToolNo.setText('EMPTY')
+                self.w.lblToolNoL.setText('EMPTY')
                 self.currentTool = 0
                 self.currentToolPocketNo = 0
                 self.setPinValue(pinName=AtcHalPin.CURRENT_TOOL_POCKET, pinVal=0)
@@ -799,6 +849,7 @@ class HandlerClass:
                 if s.interp_state == linuxcnc.INTERP_IDLE:
                     self.currentTool = s.tool_in_spindle
                     self.w.lblToolNo.setText(str(s.tool_in_spindle))
+                    self.w.lblToolNoL.setText(str(s.tool_in_spindle))
                     self.tooldb.load_tool_db() # force a reload to catch any changes
 
                     #tool_dict = self.tooldb.get_tools()
@@ -913,6 +964,8 @@ class HandlerClass:
         return getattr(self, item) 
     def __setitem__(self, item, value):
         return setattr(self, item, value)
+
+   
 
 ################################
 # required handler boiler code #

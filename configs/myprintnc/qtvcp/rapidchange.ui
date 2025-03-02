@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1023</width>
-    <height>589</height>
+    <width>1248</width>
+    <height>678</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
        <number>0</number>
@@ -24,3199 +24,1347 @@
        <attribute name="title">
         <string>Tool Changer</string>
        </attribute>
-       <widget class="QGroupBox" name="gbMacros">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>181</width>
-          <height>171</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>MACROS</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <widget class="QPushButton" name="btnSetXYPocketOne">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>30</y>
-           <width>161</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>SET XY POCKET ONE</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="btnSetZEngage">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>78</y>
-           <width>161</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>SET Z ENGAGE</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="btnSetZIREngage">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>124</y>
-           <width>161</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>SET Z IR ENGAGE</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="ToolOffsetView" name="tooloffsetview">
-        <property name="geometry">
-         <rect>
-          <x>200</x>
-          <y>10</y>
-          <width>351</width>
-          <height>491</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QGroupBox" name="gbDustCover_2">
-        <property name="geometry">
-         <rect>
-          <x>560</x>
-          <y>17</y>
-          <width>221</width>
-          <height>91</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>DUST COVER</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <widget class="ActionButton" name="btnCoverEnabled">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>30</y>
-           <width>91</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>ENABLED</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="indicator_option" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="indicator_HAL_pin_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_status_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="checked_state_text_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="python_command_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="on_color" stdset="0">
-          <color>
-           <red>38</red>
-           <green>162</green>
-           <blue>105</blue>
-          </color>
-         </property>
-         <property name="shape_option" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="off_color" stdset="0">
-          <color>
-           <red>237</red>
-           <green>51</green>
-           <blue>59</blue>
-          </color>
-         </property>
-         <property name="indicator_size" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="circle_diameter" stdset="0">
-          <number>15</number>
-         </property>
-         <property name="right_edge_offset" stdset="0">
-          <number>5</number>
-         </property>
-         <property name="top_edge_offset" stdset="0">
-          <number>5</number>
-         </property>
-         <property name="corner_radius" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="height_fraction" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="width_fraction" stdset="0">
-          <double>0.900000000000000</double>
-         </property>
-         <property name="true_state_string" stdset="0">
-          <string>True</string>
-         </property>
-         <property name="false_state_string" stdset="0">
-          <string>False</string>
-         </property>
-         <property name="true_python_cmd_string" stdset="0">
-          <string>print(&quot;true command&quot;)</string>
-         </property>
-         <property name="false_python_cmd_string" stdset="0">
-          <string>print(&quot;false command&quot;)</string>
-         </property>
-         <property name="invert_the_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_paused_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_estopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_on_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_idle_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_flood_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mist_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_block_delete_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_optional_stop_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_joint_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_limits_overridden_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_manual_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mdi_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_auto_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_stopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_fwd_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_rev_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number_status" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="estop_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="machine_on_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="template_label_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number" stdset="0">
-          <number>-1</number>
-         </property>
-         <property name="incr_imperial_number" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="incr_mm_number" stdset="0">
-          <double>0.025000000000000</double>
-         </property>
-         <property name="incr_angular_number" stdset="0">
-          <double>-1.000000000000000</double>
-         </property>
-         <property name="toggle_float_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="float_num" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="float_alt_num" stdset="0">
-          <double>50.000000000000000</double>
-         </property>
-         <property name="view_type_string" stdset="0">
-          <string>P</string>
-         </property>
-         <property name="command_text_string" stdset="0">
-          <string/>
-         </property>
-         <property name="ini_mdi_number" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="textTemplate" stdset="0">
-          <string>%1.3f in</string>
-         </property>
-         <property name="alt_textTemplate" stdset="0">
-          <string>%1.2f mm</string>
-         </property>
-        </widget>
-        <widget class="ActionButton" name="btnDustCoverToggle">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>30</y>
-           <width>100</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>TOGGLE</string>
-         </property>
-         <property name="pin_name" stdset="0">
-          <string>toggle</string>
-         </property>
-         <property name="indicator_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_HAL_pin_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_status_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="checked_state_text_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="python_command_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="on_color" stdset="0">
-          <color>
-           <red>38</red>
-           <green>162</green>
-           <blue>105</blue>
-          </color>
-         </property>
-         <property name="shape_option" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="off_color" stdset="0">
-          <color>
-           <red>237</red>
-           <green>51</green>
-           <blue>59</blue>
-          </color>
-         </property>
-         <property name="indicator_size" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="circle_diameter" stdset="0">
-          <number>10</number>
-         </property>
-         <property name="right_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="top_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="corner_radius" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="height_fraction" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="width_fraction" stdset="0">
-          <double>0.900000000000000</double>
-         </property>
-         <property name="true_state_string" stdset="0">
-          <string>True</string>
-         </property>
-         <property name="false_state_string" stdset="0">
-          <string>False</string>
-         </property>
-         <property name="true_python_cmd_string" stdset="0">
-          <string>print(&quot;true command&quot;)</string>
-         </property>
-         <property name="false_python_cmd_string" stdset="0">
-          <string>print(&quot;false command&quot;)</string>
-         </property>
-         <property name="invert_the_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_paused_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_estopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_on_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_idle_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_flood_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mist_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_block_delete_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_optional_stop_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_joint_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_limits_overridden_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_manual_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mdi_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_auto_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_stopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_fwd_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_rev_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number_status" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="estop_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="machine_on_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="template_label_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number" stdset="0">
-          <number>-1</number>
-         </property>
-         <property name="incr_imperial_number" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="incr_mm_number" stdset="0">
-          <double>0.025000000000000</double>
-         </property>
-         <property name="incr_angular_number" stdset="0">
-          <double>-1.000000000000000</double>
-         </property>
-         <property name="toggle_float_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="float_num" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="float_alt_num" stdset="0">
-          <double>50.000000000000000</double>
-         </property>
-         <property name="view_type_string" stdset="0">
-          <string>P</string>
-         </property>
-         <property name="command_text_string" stdset="0">
-          <string/>
-         </property>
-         <property name="ini_mdi_number" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="textTemplate" stdset="0">
-          <string>%1.3f in</string>
-         </property>
-         <property name="alt_textTemplate" stdset="0">
-          <string>%1.2f mm</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QGroupBox" name="gbToolActions">
-        <property name="geometry">
-         <rect>
-          <x>560</x>
-          <y>117</y>
-          <width>211</width>
-          <height>191</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>TOOL ACTIONS</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <widget class="ActionButton" name="btnM61">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>30</y>
-           <width>91</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>M61 Qn</string>
-         </property>
-         <property name="indicator_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_HAL_pin_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_status_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="checked_state_text_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="python_command_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="on_color" stdset="0">
-          <color>
-           <red>38</red>
-           <green>162</green>
-           <blue>105</blue>
-          </color>
-         </property>
-         <property name="shape_option" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="off_color" stdset="0">
-          <color>
-           <red>237</red>
-           <green>51</green>
-           <blue>59</blue>
-          </color>
-         </property>
-         <property name="indicator_size" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="circle_diameter" stdset="0">
-          <number>10</number>
-         </property>
-         <property name="right_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="top_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="corner_radius" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="height_fraction" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="width_fraction" stdset="0">
-          <double>0.900000000000000</double>
-         </property>
-         <property name="true_state_string" stdset="0">
-          <string>True</string>
-         </property>
-         <property name="false_state_string" stdset="0">
-          <string>False</string>
-         </property>
-         <property name="true_python_cmd_string" stdset="0">
-          <string>print(&quot;true command&quot;)</string>
-         </property>
-         <property name="false_python_cmd_string" stdset="0">
-          <string>print(&quot;false command&quot;)</string>
-         </property>
-         <property name="invert_the_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_paused_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_estopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_on_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_idle_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_flood_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mist_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_block_delete_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_optional_stop_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_joint_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_limits_overridden_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_manual_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mdi_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_auto_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_stopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_fwd_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_rev_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number_status" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="estop_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="machine_on_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="mdi_command_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="template_label_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number" stdset="0">
-          <number>-1</number>
-         </property>
-         <property name="incr_imperial_number" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="incr_mm_number" stdset="0">
-          <double>0.025000000000000</double>
-         </property>
-         <property name="incr_angular_number" stdset="0">
-          <double>-1.000000000000000</double>
-         </property>
-         <property name="toggle_float_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="float_num" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="float_alt_num" stdset="0">
-          <double>50.000000000000000</double>
-         </property>
-         <property name="view_type_string" stdset="0">
-          <string>P</string>
-         </property>
-         <property name="command_text_string" stdset="0">
-          <string>M62</string>
-         </property>
-         <property name="ini_mdi_number" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="textTemplate" stdset="0">
-          <string>%1.3f in</string>
-         </property>
-         <property name="alt_textTemplate" stdset="0">
-          <string>%1.2f mm</string>
-         </property>
-        </widget>
-        <widget class="ActionButton" name="btnDropTool">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>80</y>
-           <width>91</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>DROP</string>
-         </property>
-         <property name="indicator_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_HAL_pin_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_status_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="checked_state_text_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="python_command_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="on_color" stdset="0">
-          <color>
-           <red>38</red>
-           <green>162</green>
-           <blue>105</blue>
-          </color>
-         </property>
-         <property name="shape_option" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="off_color" stdset="0">
-          <color>
-           <red>237</red>
-           <green>51</green>
-           <blue>59</blue>
-          </color>
-         </property>
-         <property name="indicator_size" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="circle_diameter" stdset="0">
-          <number>10</number>
-         </property>
-         <property name="right_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="top_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="corner_radius" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="height_fraction" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="width_fraction" stdset="0">
-          <double>0.900000000000000</double>
-         </property>
-         <property name="true_state_string" stdset="0">
-          <string>True</string>
-         </property>
-         <property name="false_state_string" stdset="0">
-          <string>False</string>
-         </property>
-         <property name="true_python_cmd_string" stdset="0">
-          <string>print(&quot;true command&quot;)</string>
-         </property>
-         <property name="false_python_cmd_string" stdset="0">
-          <string>print(&quot;false command&quot;)</string>
-         </property>
-         <property name="invert_the_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_paused_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_estopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_on_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_idle_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_flood_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mist_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_block_delete_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_optional_stop_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_joint_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_limits_overridden_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_manual_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mdi_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_auto_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_stopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_fwd_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_rev_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number_status" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="estop_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="machine_on_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="mdi_command_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="template_label_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number" stdset="0">
-          <number>-1</number>
-         </property>
-         <property name="incr_imperial_number" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="incr_mm_number" stdset="0">
-          <double>0.025000000000000</double>
-         </property>
-         <property name="incr_angular_number" stdset="0">
-          <double>-1.000000000000000</double>
-         </property>
-         <property name="toggle_float_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="float_num" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="float_alt_num" stdset="0">
-          <double>50.000000000000000</double>
-         </property>
-         <property name="view_type_string" stdset="0">
-          <string>P</string>
-         </property>
-         <property name="command_text_string" stdset="0">
-          <string>M62</string>
-         </property>
-         <property name="ini_mdi_number" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="textTemplate" stdset="0">
-          <string>%1.3f in</string>
-         </property>
-         <property name="alt_textTemplate" stdset="0">
-          <string>%1.2f mm</string>
-         </property>
-        </widget>
-        <widget class="ActionButton" name="btnPickupTool">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>130</y>
-           <width>91</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>PICKUP</string>
-         </property>
-         <property name="indicator_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_HAL_pin_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_status_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="checked_state_text_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="python_command_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="on_color" stdset="0">
-          <color>
-           <red>38</red>
-           <green>162</green>
-           <blue>105</blue>
-          </color>
-         </property>
-         <property name="shape_option" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="off_color" stdset="0">
-          <color>
-           <red>237</red>
-           <green>51</green>
-           <blue>59</blue>
-          </color>
-         </property>
-         <property name="indicator_size" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="circle_diameter" stdset="0">
-          <number>10</number>
-         </property>
-         <property name="right_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="top_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="corner_radius" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="height_fraction" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="width_fraction" stdset="0">
-          <double>0.900000000000000</double>
-         </property>
-         <property name="true_state_string" stdset="0">
-          <string>True</string>
-         </property>
-         <property name="false_state_string" stdset="0">
-          <string>False</string>
-         </property>
-         <property name="true_python_cmd_string" stdset="0">
-          <string>print(&quot;true command&quot;)</string>
-         </property>
-         <property name="false_python_cmd_string" stdset="0">
-          <string>print(&quot;false command&quot;)</string>
-         </property>
-         <property name="invert_the_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_paused_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_estopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_on_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_idle_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_flood_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mist_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_block_delete_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_optional_stop_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_joint_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_limits_overridden_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_manual_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mdi_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_auto_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_stopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_fwd_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_rev_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number_status" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="estop_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="machine_on_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="mdi_command_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="template_label_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number" stdset="0">
-          <number>-1</number>
-         </property>
-         <property name="incr_imperial_number" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="incr_mm_number" stdset="0">
-          <double>0.025000000000000</double>
-         </property>
-         <property name="incr_angular_number" stdset="0">
-          <double>-1.000000000000000</double>
-         </property>
-         <property name="toggle_float_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="float_num" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="float_alt_num" stdset="0">
-          <double>50.000000000000000</double>
-         </property>
-         <property name="view_type_string" stdset="0">
-          <string>P</string>
-         </property>
-         <property name="command_text_string" stdset="0">
-          <string>M62</string>
-         </property>
-         <property name="ini_mdi_number" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="textTemplate" stdset="0">
-          <string>%1.3f in</string>
-         </property>
-         <property name="alt_textTemplate" stdset="0">
-          <string>%1.2f mm</string>
-         </property>
-        </widget>
-        <widget class="ActionButton" name="btnM6tn">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>30</y>
-           <width>91</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>M6 Tn</string>
-         </property>
-         <property name="indicator_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_HAL_pin_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_status_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="checked_state_text_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="python_command_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="on_color" stdset="0">
-          <color>
-           <red>38</red>
-           <green>162</green>
-           <blue>105</blue>
-          </color>
-         </property>
-         <property name="shape_option" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="off_color" stdset="0">
-          <color>
-           <red>237</red>
-           <green>51</green>
-           <blue>59</blue>
-          </color>
-         </property>
-         <property name="indicator_size" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="circle_diameter" stdset="0">
-          <number>10</number>
-         </property>
-         <property name="right_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="top_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="corner_radius" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="height_fraction" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="width_fraction" stdset="0">
-          <double>0.900000000000000</double>
-         </property>
-         <property name="true_state_string" stdset="0">
-          <string>True</string>
-         </property>
-         <property name="false_state_string" stdset="0">
-          <string>False</string>
-         </property>
-         <property name="true_python_cmd_string" stdset="0">
-          <string>print(&quot;true command&quot;)</string>
-         </property>
-         <property name="false_python_cmd_string" stdset="0">
-          <string>print(&quot;false command&quot;)</string>
-         </property>
-         <property name="invert_the_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_paused_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_estopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_on_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_idle_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_flood_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mist_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_block_delete_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_optional_stop_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_joint_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_limits_overridden_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_manual_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mdi_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_auto_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_stopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_fwd_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_rev_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number_status" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="estop_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="machine_on_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="mdi_command_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="template_label_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number" stdset="0">
-          <number>-1</number>
-         </property>
-         <property name="incr_imperial_number" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="incr_mm_number" stdset="0">
-          <double>0.025000000000000</double>
-         </property>
-         <property name="incr_angular_number" stdset="0">
-          <double>-1.000000000000000</double>
-         </property>
-         <property name="toggle_float_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="float_num" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="float_alt_num" stdset="0">
-          <double>50.000000000000000</double>
-         </property>
-         <property name="view_type_string" stdset="0">
-          <string>P</string>
-         </property>
-         <property name="command_text_string" stdset="0">
-          <string>M62</string>
-         </property>
-         <property name="ini_mdi_number" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="textTemplate" stdset="0">
-          <string>%1.3f in</string>
-         </property>
-         <property name="alt_textTemplate" stdset="0">
-          <string>%1.2f mm</string>
-         </property>
-        </widget>
-        <widget class="ActionButton" name="btnAdd">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>80</y>
-           <width>91</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>ADD</string>
-         </property>
-         <property name="indicator_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_HAL_pin_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_status_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="checked_state_text_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="python_command_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="on_color" stdset="0">
-          <color>
-           <red>38</red>
-           <green>162</green>
-           <blue>105</blue>
-          </color>
-         </property>
-         <property name="shape_option" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="off_color" stdset="0">
-          <color>
-           <red>237</red>
-           <green>51</green>
-           <blue>59</blue>
-          </color>
-         </property>
-         <property name="indicator_size" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="circle_diameter" stdset="0">
-          <number>10</number>
-         </property>
-         <property name="right_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="top_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="corner_radius" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="height_fraction" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="width_fraction" stdset="0">
-          <double>0.900000000000000</double>
-         </property>
-         <property name="true_state_string" stdset="0">
-          <string>True</string>
-         </property>
-         <property name="false_state_string" stdset="0">
-          <string>False</string>
-         </property>
-         <property name="true_python_cmd_string" stdset="0">
-          <string>print(&quot;true command&quot;)</string>
-         </property>
-         <property name="false_python_cmd_string" stdset="0">
-          <string>print(&quot;false command&quot;)</string>
-         </property>
-         <property name="invert_the_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_paused_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_estopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_on_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_idle_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_flood_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mist_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_block_delete_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_optional_stop_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_joint_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_limits_overridden_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_manual_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mdi_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_auto_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_stopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_fwd_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_rev_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number_status" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="estop_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="machine_on_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="mdi_command_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="template_label_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number" stdset="0">
-          <number>-1</number>
-         </property>
-         <property name="incr_imperial_number" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="incr_mm_number" stdset="0">
-          <double>0.025000000000000</double>
-         </property>
-         <property name="incr_angular_number" stdset="0">
-          <double>-1.000000000000000</double>
-         </property>
-         <property name="toggle_float_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="float_num" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="float_alt_num" stdset="0">
-          <double>50.000000000000000</double>
-         </property>
-         <property name="view_type_string" stdset="0">
-          <string>P</string>
-         </property>
-         <property name="command_text_string" stdset="0">
-          <string>M62</string>
-         </property>
-         <property name="ini_mdi_number" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="textTemplate" stdset="0">
-          <string>%1.3f in</string>
-         </property>
-         <property name="alt_textTemplate" stdset="0">
-          <string>%1.2f mm</string>
-         </property>
-        </widget>
-        <widget class="ActionButton" name="btnDelete">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>130</y>
-           <width>91</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>DELETE</string>
-         </property>
-         <property name="indicator_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_HAL_pin_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_status_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="checked_state_text_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="python_command_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="on_color" stdset="0">
-          <color>
-           <red>38</red>
-           <green>162</green>
-           <blue>105</blue>
-          </color>
-         </property>
-         <property name="shape_option" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="off_color" stdset="0">
-          <color>
-           <red>237</red>
-           <green>51</green>
-           <blue>59</blue>
-          </color>
-         </property>
-         <property name="indicator_size" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="circle_diameter" stdset="0">
-          <number>10</number>
-         </property>
-         <property name="right_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="top_edge_offset" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="corner_radius" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="height_fraction" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="width_fraction" stdset="0">
-          <double>0.900000000000000</double>
-         </property>
-         <property name="true_state_string" stdset="0">
-          <string>True</string>
-         </property>
-         <property name="false_state_string" stdset="0">
-          <string>False</string>
-         </property>
-         <property name="true_python_cmd_string" stdset="0">
-          <string>print(&quot;true command&quot;)</string>
-         </property>
-         <property name="false_python_cmd_string" stdset="0">
-          <string>print(&quot;false command&quot;)</string>
-         </property>
-         <property name="invert_the_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_paused_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_estopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_on_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_idle_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_flood_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mist_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_block_delete_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_optional_stop_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_joint_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_limits_overridden_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_manual_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mdi_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_auto_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_stopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_fwd_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_rev_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number_status" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="estop_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="machine_on_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="mdi_command_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="template_label_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number" stdset="0">
-          <number>-1</number>
-         </property>
-         <property name="incr_imperial_number" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="incr_mm_number" stdset="0">
-          <double>0.025000000000000</double>
-         </property>
-         <property name="incr_angular_number" stdset="0">
-          <double>-1.000000000000000</double>
-         </property>
-         <property name="toggle_float_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="float_num" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="float_alt_num" stdset="0">
-          <double>50.000000000000000</double>
-         </property>
-         <property name="view_type_string" stdset="0">
-          <string>P</string>
-         </property>
-         <property name="command_text_string" stdset="0">
-          <string>M62</string>
-         </property>
-         <property name="ini_mdi_number" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="textTemplate" stdset="0">
-          <string>%1.3f in</string>
-         </property>
-         <property name="alt_textTemplate" stdset="0">
-          <string>%1.2f mm</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QLabel" name="lblToolNo">
-        <property name="geometry">
-         <rect>
-          <x>130</x>
-          <y>200</y>
-          <width>51</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>UNSET</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblInputs_4">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>200</y>
-          <width>111</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>CURRENT TOOL:</string>
-        </property>
-       </widget>
-       <widget class="QGroupBox" name="gbIRToolSensor">
-        <property name="geometry">
-         <rect>
-          <x>560</x>
-          <y>310</y>
-          <width>211</width>
-          <height>91</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>IR TOOL SENSOR</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <widget class="ActionButton" name="btn_ir_enabled">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>30</y>
-           <width>91</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>ENABLED</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="indicator_option" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="indicator_HAL_pin_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="indicator_status_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="checked_state_text_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="python_command_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="on_color" stdset="0">
-          <color>
-           <red>38</red>
-           <green>162</green>
-           <blue>105</blue>
-          </color>
-         </property>
-         <property name="shape_option" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="off_color" stdset="0">
-          <color>
-           <red>237</red>
-           <green>51</green>
-           <blue>59</blue>
-          </color>
-         </property>
-         <property name="indicator_size" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="circle_diameter" stdset="0">
-          <number>15</number>
-         </property>
-         <property name="right_edge_offset" stdset="0">
-          <number>5</number>
-         </property>
-         <property name="top_edge_offset" stdset="0">
-          <number>5</number>
-         </property>
-         <property name="corner_radius" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="height_fraction" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="width_fraction" stdset="0">
-          <double>0.900000000000000</double>
-         </property>
-         <property name="true_state_string" stdset="0">
-          <string>True</string>
-         </property>
-         <property name="false_state_string" stdset="0">
-          <string>False</string>
-         </property>
-         <property name="true_python_cmd_string" stdset="0">
-          <string>print(&quot;true command&quot;)</string>
-         </property>
-         <property name="false_python_cmd_string" stdset="0">
-          <string>print(&quot;false command&quot;)</string>
-         </property>
-         <property name="invert_the_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_paused_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_estopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_on_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_idle_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_flood_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mist_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_block_delete_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_optional_stop_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_joint_homed_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_limits_overridden_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_manual_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_mdi_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_auto_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_stopped_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_fwd_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="is_spindle_rev_status" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number_status" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="estop_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="machine_on_action" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="template_label_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="joint_number" stdset="0">
-          <number>-1</number>
-         </property>
-         <property name="incr_imperial_number" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="incr_mm_number" stdset="0">
-          <double>0.025000000000000</double>
-         </property>
-         <property name="incr_angular_number" stdset="0">
-          <double>-1.000000000000000</double>
-         </property>
-         <property name="toggle_float_option" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="float_num" stdset="0">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="float_alt_num" stdset="0">
-          <double>50.000000000000000</double>
-         </property>
-         <property name="view_type_string" stdset="0">
-          <string>P</string>
-         </property>
-         <property name="command_text_string" stdset="0">
-          <string/>
-         </property>
-         <property name="ini_mdi_number" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="textTemplate" stdset="0">
-          <string>%1.3f in</string>
-         </property>
-         <property name="alt_textTemplate" stdset="0">
-          <string>%1.2f mm</string>
-         </property>
-        </widget>
-        <widget class="StateLED" name="ledIRTrigger">
-         <property name="geometry">
-          <rect>
-           <x>180</x>
-           <y>50</y>
-           <width>15</width>
-           <height>15</height>
-          </rect>
-         </property>
-         <property name="flashing" stdset="0">
-          <bool>false</bool>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lblIRTriggerStatus">
-         <property name="geometry">
-          <rect>
-           <x>110</x>
-           <y>36</y>
-           <width>61</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>IR TRIGGER STATUS</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QLabel" name="lblMachineOnNotice">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>300</y>
-          <width>181</width>
-          <height>101</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; vertical-align:super;&quot;&gt;Machine must be &lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#f66151; vertical-align:super;&quot;&gt;ON&lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; vertical-align:super;&quot;&gt; and all axis &lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#f66151; vertical-align:super;&quot;&gt;HOMED&lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; vertical-align:super;&quot;&gt; to enable tool actions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblInputs_5">
-        <property name="geometry">
-         <rect>
-          <x>31</x>
-          <y>220</y>
-          <width>100</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>TOOL POCKET:</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblToolPocket">
-        <property name="geometry">
-         <rect>
-          <x>130</x>
-          <y>220</y>
-          <width>51</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QGroupBox" name="gbToolStatus">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>260</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QFrame" name="frameCurrentTool">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>50</pointsize>
+              </font>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QLabel" name="lblToolInSpindle">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>20</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>TOOL IN SPINDLE</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblToolNoL">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>24</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>EMPTY</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="gbToolDetails">
+             <property name="title">
+              <string>TOOL DETAILS</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QFormLayout" name="formLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="lblToolNumber">
+                <property name="text">
+                 <string>Tool Number:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="lblToolNo">
+                <property name="minimumSize">
+                 <size>
+                  <width>90</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>UNSET</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="lblPocketNumber">
+                <property name="text">
+                 <string>Pocket Number:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="lblToolPocket">
+                <property name="text">
+                 <string>NONE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="gbToolActions">
+             <property name="title">
+              <string>TOOL ACTIONS</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="ActionButton" name="btnDropTool">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>DROP</string>
+                </property>
+                <property name="indicator_option" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="shape_option" stdset="0">
+                 <number>2</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="ActionButton" name="btnPickupTool">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>PICKUP</string>
+                </property>
+                <property name="indicator_option" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="shape_option" stdset="0">
+                 <number>2</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="gbAdvancedToolCommands">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>TOOL CHANGE COMMANDS</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="ActionButton" name="btnM61">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>M61 Qn</string>
+                </property>
+                <property name="indicator_option" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="shape_option" stdset="0">
+                 <number>2</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="ActionButton" name="btnM6tn">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>M6 Tn</string>
+                </property>
+                <property name="indicator_option" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="shape_option" stdset="0">
+                 <number>2</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblMachineOnNotice">
+             <property name="font">
+              <font>
+               <pointsize>50</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;Machine must be &lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#f66151;&quot;&gt;ON&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt; and all axes &lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#f66151;&quot;&gt;HOMED&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt; to enable tool actions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="gbToolLibrary">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>TOOL LIBRARY</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="ToolOffsetView" name="tooloffsetview">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="ActionButton" name="btnAdd">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>ADD</string>
+               </property>
+               <property name="indicator_option" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="shape_option" stdset="0">
+                <number>2</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="ActionButton" name="btnDelete">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>DELETE</string>
+               </property>
+               <property name="indicator_option" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="shape_option" stdset="0">
+                <number>2</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="gbATCSettings">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>260</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QGroupBox" name="gbDustCover">
+             <property name="title">
+              <string>DUST COVER</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="ActionButton" name="btnCoverEnabled">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>ENABLED</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <property name="indicator_option" stdset="0">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="ActionButton" name="btnDustCoverToggle">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>TOGGLE</string>
+                </property>
+                <property name="indicator_option" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="shape_option" stdset="0">
+                 <number>2</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="gbIRToolSensor">
+             <property name="title">
+              <string>IR TOOL SENSOR</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="ActionButton" name="btn_ir_enabled">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>ENABLED</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <property name="indicator_option" stdset="0">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <widget class="QLabel" name="lblIRTriggerStatus">
+                  <property name="text">
+                   <string>IR TRIGGER STATUS</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_7">
+                  <item>
+                   <spacer name="horizontalSpacer_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="StateLED" name="ledIRTrigger">
+                    <property name="minimumSize">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="flashing" stdset="0">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="gbMacros">
+             <property name="title">
+              <string>POSITION SETUP</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QPushButton" name="btnSetXYPocketOne">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>SET XY POCKET ONE</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnSetZEngage">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>SET Z ENGAGE</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnSetZIREngage">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>SET Z IR ENGAGE</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="gbVersaProbe">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>260</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>VERSA PROBE (READ ONLY)</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_9">
+              <item>
+               <widget class="QGroupBox" name="gbDustCover_3">
+                <property name="title">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                 <item>
+                  <widget class="QLabel" name="lblNoPockets_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>SENSOR HT:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="leSensorHT">
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="gbDustCover_2">
+                <property name="title">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <item>
+                  <widget class="QLabel" name="lblNoPockets_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>BLOCK HT:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="leBlockHT">
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="settingsTab">
+      <widget class="QWidget" name="tabAdvancedSettings">
        <attribute name="title">
         <string>Settings</string>
        </attribute>
-       <widget class="QGroupBox" name="groupBox">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1002</width>
-          <height>558</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-        <widget class="ScreenOptions" name="screen_options">
-         <property name="geometry">
-          <rect>
-           <x>380</x>
-           <y>500</y>
-           <width>16</width>
-           <height>16</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QGroupBox" name="gbPockets">
-         <property name="geometry">
-          <rect>
-           <x>20</x>
-           <y>23</y>
-           <width>181</width>
-           <height>111</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>POCKETS</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <widget class="QLineEdit" name="leNoPockets">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>30</y>
-            <width>71</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="inputMask">
-           <string>D</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string/>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblNoPockets">
-          <property name="geometry">
-           <rect>
-            <x>-7</x>
-            <y>29</y>
-            <width>111</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>NUMBER OF POCKETS</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblPocketOffset">
-          <property name="geometry">
-           <rect>
-            <x>6</x>
-            <y>67</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>POCKET OFFSET</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lePocketOffset">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>70</y>
-            <width>71</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QGroupBox" name="gbLocations">
-         <property name="geometry">
-          <rect>
-           <x>20</x>
-           <y>140</y>
-           <width>181</width>
-           <height>351</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>LOCATIONS</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <widget class="QLineEdit" name="leLocPocketOneX">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>30</y>
-            <width>71</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblPocketOneXPos">
-          <property name="geometry">
-           <rect>
-            <x>14</x>
-            <y>28</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>POCKET #1 X POS</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblPocketOneYPos">
-          <property name="geometry">
-           <rect>
-            <x>15</x>
-            <y>68</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>POCKET #1 Y POS</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leLocPocketOneY">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>70</y>
-            <width>71</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leLocZEngage">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>145</y>
-            <width>71</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblLocZEngage">
-          <property name="geometry">
-           <rect>
-            <x>14</x>
-            <y>143</y>
-            <width>81</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>Z TOOL ENGAGE</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblLocZSafeClearance">
-          <property name="geometry">
-           <rect>
-            <x>8</x>
-            <y>238</y>
-            <width>91</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>Z SAFE CLEARANCE</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leZSafeClearance">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>240</y>
-            <width>71</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblLocXManualChangePos">
-          <property name="geometry">
-           <rect>
-            <x>8</x>
-            <y>277</y>
-            <width>91</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>X MANUAL CHANGE POS</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblLocYManualChangePos">
-          <property name="geometry">
-           <rect>
-            <x>6</x>
-            <y>317</y>
-            <width>91</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>Y MANUAL CHANGE POS</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leXManualChangePos">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>280</y>
-            <width>71</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leYManualChangePos">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>320</y>
-            <width>71</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblLocZEngageDrop">
-          <property name="geometry">
-           <rect>
-            <x>6</x>
-            <y>191</y>
-            <width>91</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>Z TOOL DROP OFFSET</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leZToolDropOffset">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>190</y>
-            <width>71</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QGroupBox" name="gbSpeedsFeeds">
-         <property name="geometry">
-          <rect>
-           <x>210</x>
-           <y>100</y>
-           <width>181</width>
-           <height>201</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>SPEEDS AND FEEDS</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <widget class="QLabel" name="lblSFPickUpRate">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>30</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>PICK UP FEED RATE</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leSFPickUpRate">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>30</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblSFDropRate">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>67</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>DROP FEED RATE</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leSFDropRate">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>70</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblSpindleSpeedPickup">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>101</y>
-            <width>101</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>SPINDLE SPEED PICKUP</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leSpindleSpeedPickup">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>110</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leSpindleSpeedDrop">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>159</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblSpindleSpeedDrop">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>150</y>
-            <width>101</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>SPINDLE SPEED DROP</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QGroupBox" name="gbToolSetter">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>580</x>
-           <y>20</y>
-           <width>181</width>
-           <height>151</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>TOOL SETTER [FUTURE]</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <widget class="QLineEdit" name="leToolOffset">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>30</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblToolSetToolOffset">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>30</y>
-            <width>110</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>SET TOOL OFFSET</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblToolSeekFeedrate">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>70</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>SEEK FEEDRATE</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leToolSeekFeedrate">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>70</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblToolSetFeedrate">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>110</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>SET FEEDRATE</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leToolSetFeedrate">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>110</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QGroupBox" name="gbToolSetterTouch">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>580</x>
-           <y>170</y>
-           <width>181</width>
-           <height>211</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>TOOL SETTER TOUCH [FUTURE]</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <widget class="QLineEdit" name="leToolSetterXLoc">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>30</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblToolSetterLocX">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>30</y>
-            <width>110</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>X LOCATION</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblToolSetterLocY">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>63</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>Y LOCATION</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leToolSetterYLoc">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>65</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblToolSetterMove">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>102</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>Z MOVE TO SET TOOL</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leToolSetterZ">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>102</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblToolSetterZStartSeek">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>140</y>
-            <width>81</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>Z START SEEK</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leToolSetterZStartSeek">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>140</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leToolSetterToolMax">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>177</y>
-            <width>61</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblToolSetterToolMax">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>177</y>
-            <width>81</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>SET TOOL MAX TRAVEL</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QGroupBox" name="gbAlignment">
-         <property name="geometry">
-          <rect>
-           <x>210</x>
-           <y>23</y>
-           <width>181</width>
-           <height>71</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>ALIGNMENT</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <widget class="QGroupBox" name="groupBox_15">
-          <property name="geometry">
-           <rect>
-            <x>40</x>
-            <y>70</y>
-            <width>241</width>
-            <height>71</height>
-           </rect>
-          </property>
-          <property name="title">
-           <string>TOOL SETTER IR</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <widget class="QLineEdit" name="lineEdit_41">
-           <property name="geometry">
-            <rect>
-             <x>110</x>
-             <y>30</y>
-             <width>113</width>
-             <height>25</height>
-            </rect>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QSplitter" name="splitter">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QGroupBox" name="gbPositionSettings">
+           <property name="title">
+            <string>POSITION SETTINGS</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <widget class="QGroupBox" name="gbPockets">
+              <property name="title">
+               <string>POCKETS</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="0">
+                <widget class="QLabel" name="lblNoPockets">
+                 <property name="text">
+                  <string>NUMBER OF POCKETS</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="leNoPockets">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="lblPocketOffset">
+                 <property name="text">
+                  <string>POCKET OFFSET</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="lePocketOffset">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="gbLocations">
+              <property name="title">
+               <string>LOCATIONS</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="0" column="0">
+                <widget class="QLabel" name="lblPocketOneXPos">
+                 <property name="text">
+                  <string>POCKET #1 X POS</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="leLocPocketOneX">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="lblPocketOneYPos">
+                 <property name="text">
+                  <string>POCKET #1 Y POS</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="leLocPocketOneY">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="lblLocZEngage">
+                 <property name="text">
+                  <string>Z TOOL ENGAGE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="leLocZEngage">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="lblLocZEngageDrop">
+                 <property name="text">
+                  <string>Z TOOL DROP OFFSET</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="leZToolDropOffset">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lblLocZIROffset">
+                 <property name="text">
+                  <string>Z IR ENGAGE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="leLocZIREngage">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="lblLocZSafeClearance">
+                 <property name="text">
+                  <string>Z SAFE CLEARANCE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="leZSafeClearance">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="lblLocXManualChangePos">
+                 <property name="text">
+                  <string>X MANUAL CHANGE POS</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QLineEdit" name="leXManualChangePos">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="lblLocYManualChangePos">
+                 <property name="text">
+                  <string>Y MANUAL CHANGE POS</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QLineEdit" name="leYManualChangePos">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="gbAlignment">
+              <property name="title">
+               <string>ALIGNMENT</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+               <item>
+                <widget class="PushButton" name="pbXAxis">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>X-AXIS</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="indicator_option" stdset="0">
+                  <bool>true</bool>
+                 </property>
+                 <property name="indicator_status_option" stdset="0">
+                  <bool>true</bool>
+                 </property>
+                 <property name="python_command_option" stdset="0">
+                  <bool>true</bool>
+                 </property>
+                 <property name="indicator_size" stdset="0">
+                  <double>0.600000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="PushButton" name="pbYAxis">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Y-AXIS</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="pin_name" stdset="0">
+                  <string>yy</string>
+                 </property>
+                 <property name="indicator_option" stdset="0">
+                  <bool>true</bool>
+                 </property>
+                 <property name="indicator_status_option" stdset="0">
+                  <bool>true</bool>
+                 </property>
+                 <property name="python_command_option" stdset="0">
+                  <bool>true</bool>
+                 </property>
+                 <property name="indicator_size" stdset="0">
+                  <double>0.600000000000000</double>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
-          <widget class="QGroupBox" name="groupBox_16">
-           <property name="geometry">
-            <rect>
-             <x>240</x>
-             <y>140</y>
-             <width>241</width>
-             <height>151</height>
-            </rect>
-           </property>
+          <widget class="QGroupBox" name="gbSpeedSettings">
            <property name="title">
             <string>SPEEDS AND FEEDS</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
-           <widget class="QLineEdit" name="lineEdit_42">
-            <property name="geometry">
-             <rect>
-              <x>110</x>
-              <y>30</y>
-              <width>113</width>
-              <height>25</height>
-             </rect>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_51">
-            <property name="geometry">
-             <rect>
-              <x>0</x>
-              <y>30</y>
-              <width>110</width>
-              <height>30</height>
-             </rect>
-            </property>
-            <property name="inputMethodHints">
-             <set>Qt::ImhDigitsOnly</set>
-            </property>
-            <property name="text">
-             <string>ENGAGE FEED RATE</string>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_52">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>70</y>
-              <width>81</width>
-              <height>30</height>
-             </rect>
-            </property>
-            <property name="inputMethodHints">
-             <set>Qt::ImhDigitsOnly</set>
-            </property>
-            <property name="text">
-             <string>PICK UP RATE</string>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-           <widget class="QLineEdit" name="lineEdit_43">
-            <property name="geometry">
-             <rect>
-              <x>110</x>
-              <y>70</y>
-              <width>113</width>
-              <height>25</height>
-             </rect>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_53">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>110</y>
-              <width>81</width>
-              <height>30</height>
-             </rect>
-            </property>
-            <property name="inputMethodHints">
-             <set>Qt::ImhDigitsOnly</set>
-            </property>
-            <property name="text">
-             <string>DROP RATE</string>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-           <widget class="QLineEdit" name="lineEdit_44">
-            <property name="geometry">
-             <rect>
-              <x>110</x>
-              <y>110</y>
-              <width>113</width>
-              <height>25</height>
-             </rect>
-            </property>
-           </widget>
+           <layout class="QFormLayout" name="formLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="lblSFPickUpRate">
+              <property name="text">
+               <string>PICK UP FEED RATE</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="leSFPickUpRate">
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lblSFDropRate">
+              <property name="text">
+               <string>DROP FEED RATE</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="leSFDropRate">
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="lblSpindleSpeedPickup">
+              <property name="text">
+               <string>SPINDLE SPEED PICKUP</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="leSpindleSpeedPickup">
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="lblSpindleSpeedDrop">
+              <property name="text">
+               <string>SPINDLE SPEED DROP</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="leSpindleSpeedDrop">
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QGroupBox" name="gbAdvancedConfig">
+           <property name="title">
+            <string>ADVANCED</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <layout class="QFormLayout" name="formLayout_3">
+            <item row="0" column="0">
+             <widget class="QLabel" name="lblCoverDPin">
+              <property name="text">
+               <string>DUST COVER DIGITAL PIN NO.</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="leCoverDPinInput">
+              <property name="inputMask">
+               <string>9</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lblToolIRDPiNo">
+              <property name="text">
+               <string>TOOL IR DIGITAL PIN NO.</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="leIRDPinInput">
+              <property name="inputMask">
+               <string>9</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </widget>
-         <widget class="PushButton" name="pbXAxis">
-          <property name="geometry">
-           <rect>
-            <x>11</x>
-            <y>30</y>
-            <width>71</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>0</width>
-            <height>100</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>X-AXIS</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="pin_name" stdset="0">
-           <string/>
-          </property>
-          <property name="indicator_option" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="indicator_status_option" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="python_command_option" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="indicator_size" stdset="0">
-           <double>0.600000000000000</double>
-          </property>
-          <property name="true_python_cmd_string" stdset="0">
-           <string/>
-          </property>
-          <property name="false_python_cmd_string" stdset="0">
-           <string/>
-          </property>
-         </widget>
-         <widget class="PushButton" name="pbYAxis">
-          <property name="geometry">
-           <rect>
-            <x>96</x>
-            <y>30</y>
-            <width>71</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>0</width>
-            <height>100</height>
-           </size>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabAbout">
+       <attribute name="title">
+        <string>About</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_about">
+        <item>
+         <widget class="QLabel" name="labelTitle">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
           </property>
           <property name="text">
-           <string>Y-AXIS</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="pin_name" stdset="0">
-           <string>yy</string>
-          </property>
-          <property name="indicator_option" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="indicator_status_option" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="python_command_option" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="indicator_size" stdset="0">
-           <double>0.600000000000000</double>
-          </property>
-          <property name="true_python_cmd_string" stdset="0">
-           <string/>
-          </property>
-          <property name="false_python_cmd_string" stdset="0">
-           <string/>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QLineEdit" name="leLocZIREngage">
-         <property name="geometry">
-          <rect>
-           <x>120</x>
-           <y>250</y>
-           <width>71</width>
-           <height>25</height>
-          </rect>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lblLocZIROffset">
-         <property name="geometry">
-          <rect>
-           <x>24</x>
-           <y>248</y>
-           <width>91</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="inputMethodHints">
-          <set>Qt::ImhDigitsOnly</set>
-         </property>
-         <property name="text">
-          <string>Z IR ENGAGE</string>
-         </property>
-         <property name="scaledContents">
-          <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-        <widget class="QGroupBox" name="gbPockets_2">
-         <property name="geometry">
-          <rect>
-           <x>210</x>
-           <y>320</y>
-           <width>181</width>
-           <height>131</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>ADVANCED</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <widget class="QLineEdit" name="leCoverDPinInput">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>30</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="inputMask">
-           <string>9</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string/>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblCoverDPin">
-          <property name="geometry">
-           <rect>
-            <x>3</x>
-            <y>29</y>
-            <width>111</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>DUST COVER DIGITAL PIN NO.</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="lblToolIRDPiNo">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>70</y>
-            <width>101</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhDigitsOnly</set>
-          </property>
-          <property name="text">
-           <string>TOOL IR DIGITAL PIN NO.</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="leIRDPinInput">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>79</y>
-            <width>61</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <property name="inputMask">
-           <string>9</string>
+           <string>RapidChange ATC Plugin</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
-        </widget>
-       </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelVersion">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Version: 1.0.0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextBrowser" name="textBrowserAbout">
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;The RapidChange ATC Plugin is a powerful tool designed to enhance LinuxCNC with advanced automatic tool changing capabilities. This plugin provides a user-friendly interface for managing tool changes, tool data, and automated workflows.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:600;&quot;&gt;Key Features:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Automated tool change operations&lt;/li&gt;
+&lt;li style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Support for multiple tool pockets&lt;/li&gt;
+&lt;li style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Integrated dust cover control&lt;/li&gt;
+&lt;li style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;IR sensor tool detection&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:600;&quot;&gt;System Requirements:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;LinuxCNC 2.8+&lt;/li&gt;
+&lt;li style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;QtDragon HD interface&lt;/li&gt;
+&lt;li style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Properly configured HAL pins&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:600;&quot;&gt;Author:&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt; Ken Thompson&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:600;&quot;&gt;License:&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt; MIT License&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:600;&quot;&gt;Documentation and Source Code:&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://github.com/KennethThompson/rapidchange-atc&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://github.com/KennethThompson/rapidchange-atc&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;Copyright © 2025 Ken Thompson. All rights reserved.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="openExternalLinks">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -3254,12 +1402,6 @@
    <class>ActionButton</class>
    <extends>IndicatedPushButton</extends>
    <header>qtvcp.widgets.action_button</header>
-  </customwidget>
-  <customwidget>
-   <class>ScreenOptions</class>
-   <extends>QWidget</extends>
-   <header>qtvcp.widgets.screen_options</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
