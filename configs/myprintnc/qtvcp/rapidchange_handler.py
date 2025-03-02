@@ -23,11 +23,13 @@
 
 from enum import StrEnum
 from os import path
+import time
+from PyQt5.QtCore import QCoreApplication
 #import debugpy
 import linuxcnc
 import sys
 import hal
-
+_translate = QCoreApplication.translate
 #from subprocess import PIPE, Popen
 #import emccanon
 
@@ -177,8 +179,15 @@ class HandlerClass:
         self.tooldb = ToolTableReader(tooldb=self.toolTablePath)
         self.currentTool = 0
         self.currentToolPocketNo = 0
+        
+        # Create HAL pins for monitoring tool change
+        self.hal.newpin("tool_change_active", hal.HAL_BIT, hal.HAL_OUT)
+        self.hal.newpin("tool_number", hal.HAL_S32, hal.HAL_OUT)
+        self.hal["tool_change_active"] = False
+        self.hal["tool_number"] = 0
+        
 
-    
+
     def onTextChanged(self, s:str):
         print(f'Text Changed: {s}')
 
@@ -245,8 +254,8 @@ class HandlerClass:
             STATUS.connect('periodic', lambda w: self.updatePeriodic())
             STATUS.connect('general', self.dialog_return)
 
-            #pin = self.QHAL.newpin("jog.axis.jogger", QHAL.HAL_BIT, QHAL.HAL_IN)
-            #pin.value_changed.connect(lambda s: self.kb_jog(s, 0, 1, fast = False, linear = True))
+            #self.ok_pin = QHAL.newpin("oktest", QHAL.HAL_BIT, QHAL.HAL_IN)
+            #self.ok_pin.value_changed.connect(lambda s: self.dialog_return(s))
 
             
             # UI elements
@@ -282,6 +291,8 @@ class HandlerClass:
 
 
             self.w.btnM61.clicked.connect( lambda: self.loadToolViaM61() )
+
+            self.w.btnM6tn.clicked.connect( lambda: self.loadToolViaM6tn() )
 
             '''
             future items, which may never be implemented
@@ -336,9 +347,8 @@ class HandlerClass:
             self.pocketOffsetInput.editingFinished.connect(
                 lambda: (self.w.MAIN.PREFS_.putpref(ConfigElement.POCKET_OFFSET, self.pocketOffsetInput.text(), str, ConfigElement.ATC_SECTION),
                          log.debug(f'SETTING {ConfigElement.POCKET_OFFSET} = {self.pocketOffsetInput.text()} in preferences'),
-                         self.setPinValue( pinName = AtcHalPin.POCKET_OFFSET, pinVal = float(self.pocketOffsetInput.text()))
-                        )
-                )
+                         self.setPinValue( pinName = AtcHalPin.POCKET_OFFSET, pinVal = float(self.pocketOffsetInput.text()))))
+                        
             
             '''
                 first_pocket_x : X pos of first pocket
@@ -636,8 +646,8 @@ class HandlerClass:
             self.dropRateInput.editingFinished.connect(
                 lambda: (self.w.MAIN.PREFS_.putpref(ConfigElement.DROP_RATE, int(self.dropRateInput.text()), int, ConfigElement.ATC_SECTION),
                 self.setPinValue( pinName = AtcHalPin.DROP_RATE, pinVal = int(self.dropRateInput.text())),
-                log.debug(f'SETTING {ConfigElement.DROP_RATE} = {self.dropRateInput.text()} in preferences'))
-                )
+                log.debug(f'SETTING {ConfigElement.DROP_RATE} = {self.dropRateInput.text()} in preferences')))
+                
             self.dropRateInput.setValidator(
             QtGui.QDoubleValidator(
                 0, # bottom
@@ -760,6 +770,8 @@ class HandlerClass:
 
             #self.w.web_view.page().urlChanged.connect(self.onLoadFinished)
 
+            # Register a periodic check for the tool change state
+            #STATUS.connect('periodic', self.check_tool_change_state)
 
     #######################
     # CALLBACKS FROM FORM #
@@ -805,12 +817,22 @@ class HandlerClass:
             self.executeProgram('o<_dust_cover_op> call [0]')
         
     def dialog_return(self, w, message):
-        print('RETURN FROM DIALOG')
         rtn = message.get('RETURN')
-        code = bool(message.get('ID') == '__test1__')
-        name = bool(message.get('NAME') == 'MESSAGE')
-        if code and name and not rtn is None:
-            print('Entry return value from {} = {}'.format(code, rtn))
+        name = message.get('NAME')
+        tool_loaded_code = bool(message.get('ID') == '_toolloaded_')
+        print(f'message = {message}')
+
+        if tool_loaded_code and rtn == True:
+            print(f'tool_loaded_code = {tool_loaded_code}')
+            print(f'rtn = {rtn}')
+            self.loadToolViaM61()
+            t = self.getSelectedToolFromTable()
+            print(f't = {t}')
+            ACTION.CALL_MDI_WAIT( f"M6 T{t[0]}" )
+            time.sleep(1)
+            self.executeProgram(f'o<_auto_probe_tool> call [{t[0]}] [{t[0]}] [{self.c[AtcHalPin.CURRENT_TOOL_POCKET]}] [{self.c[AtcHalPin.CURRENT_TOOL_POCKET]}]')
+
+
     
         
     def toggleAllHomed(self, w, data):
@@ -834,7 +856,7 @@ class HandlerClass:
             self.w.gbMacros.setEnabled((homed & machine_on))
             self.w.lblMachineOnNotice.setVisible(not (homed & machine_on))
             
-            s = self.getCurrentStat()#linuxcnc.stat()
+            s = self.getCurrentStat()
             s.poll()
             if s.tool_in_spindle == 0:
                 self.w.lblToolNo.setText('EMPTY')
@@ -852,11 +874,6 @@ class HandlerClass:
                     self.w.lblToolNoL.setText(str(s.tool_in_spindle))
                     self.tooldb.load_tool_db() # force a reload to catch any changes
 
-                    #tool_dict = self.tooldb.get_tools()
-                    #for k, v in tool_dict.items():
-                    #    pin_name = f'{AtcHalPin.TOOL_INDEX}{k}'
-                    #    self.setPinValue(pinName=pin_name.lower(), pinVal=v)
-
                     p = self.getToolPocketByIndex(s.tool_in_spindle)
                     self.currentToolPocketNo = p
                     self.setPinValue(pinName=AtcHalPin.CURRENT_TOOL_POCKET, pinVal=p)
@@ -867,45 +884,88 @@ class HandlerClass:
             print(ex)
             pass
 
-
-    '''
-        def outputToolTable(self):
-        self.executeProgram('o<_current_tool_info> call')
-        toolList = self.loadToolViaM61()
-        print(f'Tool List = {toolList}')
-        s = linuxcnc.stat()
-        s.poll()
-        # to find the loaded tool information it is in tool table index 0
-        if s.tool_table[0].id != 0: # a tool is loaded
-            print(s.tool_table[0].zoffset)
-        else:
-            print("no tool loaded")
     '''
     
-
-            
-    def getToolPocketByIndex(self, index):
-        return self.tooldb.get_tool_pocket(toolid=index)
-        
-            
-    def getCurrentStat(self):
+        def check_tool_change_state(self, w):
         try:
-            s = linuxcnc.stat() # create a connection to the status channel
-            s.poll() # get current values
-            return s
-        except linuxcnc.error as detail:
-            log.error(f'Error: {detail}')
-            sys.exit(1)  
+            # Check if the tool change dialog is active
+            # Use the correct HAL pin name for QtDragon_hd
+            dialog_active = QHAL.getvalue("qtdragon.oktest-waiting")
+            if dialog_active and not self.hal["tool_change_active"]:
+                # Tool change dialog just became active
+                self.hal["tool_change_active"] = True
+                self.hal["tool_number"] = self.currentTool  # Set the current tool number
+                log.info(f"Tool change dialog activated for tool: {self.currentTool}")
+                
+                # Update any UI elements to reflect the tool change state
+                if hasattr(self.w, "lbl_tool_change_status"):
+                    self.w.lbl_tool_change_status.setText(f"Changing to tool #{self.currentTool}")
+                    
+            elif not dialog_active and self.hal["tool_change_active"]:
+                # Tool change dialog just closed
+                self.hal["tool_change_active"] = False
+                log.info("Tool change completed")
+                
+                # Update any UI elements to reflect the completion
+                if hasattr(self.w, "lbl_tool_change_status"):
+                    self.w.lbl_tool_change_status.setText("Tool change completed")
+        except Exception as e:
+            log.error(f"Error in check_tool_change_state: {e}")
+    '''
 
+    
     def loadToolViaM61(self):
         t = self.getSelectedToolFromTable()
         if len(t) > 0:
             self.executeProgram(f'M61 Q{t[0]}')
-           #emccanon.CHANGE_TOOL(2)
+            #emccanon.CHANGE_TOOL(2)
             self.w.tooloffsetview.repaint()
             cmd = linuxcnc.command()
             cmd.load_tool_table()
+    
+    def loadToolViaM6tn(self):
+        t = self.getSelectedToolFromTable()
+        if len(t) == 0:
+            return
+        # Make sure that the mode is set to MDI
+        ACTION.CALL_MDI_WAIT( f"G90" )
+        ACTION.CALL_MDI_WAIT( f"G53 G0 Z{self.c[AtcHalPin.SAFE_Z]}" )
+        ACTION.CALL_MDI_WAIT( f"G53 G0 X[{self.c[AtcHalPin.X_MANUAL_CHANGE_POS]}] Y[{self.c[AtcHalPin.Y_MANUAL_CHANGE_POS]}]")
+        
+        #hal.set_p('qtdragon.manualtoolok', "1")
+        info = _translate("HandlerClass",f"Tool #{t[0]} loaded? Press OK to continue, or Cancel to abort.")
+        mess = {'NAME':'MESSAGE', 'ID':'_toolloaded_', 'MESSAGE':'TOOL LOADED', 'MORE':info, 'TYPE':'OKCANCEL'}
+        ACTION.CALL_DIALOG(mess)
+        
+
+        # o<_auto_probe_tool> sub
+        # #<tool_in_spindle> = #1
+        # #<selected_tool> = #2
+        # #<current_pocket> = #3
+        # #<selected_pocket> = #4
+
+        # Go to safe Z
+        # Set the tool number
+        #ACTION.CALL_MDI_WAIT( f"M61 Q{t[0]}" )
+
+
+
+
+        #ACTION.CALL_MDI_WAIT( f"G10 L2 P0 Z%s" )
+
+        #
+        #
+        #if len(t) > 0:
+        #    # Set the current tool number for the dialog to display
+        #    self.hal["tool_number"] = t[0]
             
+        #    # Call the manual tool change subroutine with the selected tool number
+        #    
+            
+            # After the tool change is complete, update the tool table display
+        #    self.w.tooloffsetview.repaint()
+        #    cmd = linuxcnc.command()
+        #    cmd.load_tool_table()
 
     def loadToolViaATC(self):
         t = self.getSelectedToolFromTable()
@@ -965,7 +1025,17 @@ class HandlerClass:
     def __setitem__(self, item, value):
         return setattr(self, item, value)
 
-   
+    def getToolPocketByIndex(self, index):
+        return self.tooldb.get_tool_pocket(toolid=index)
+        
+    def getCurrentStat(self):
+        try:
+            s = linuxcnc.stat() # create a connection to the status channel
+            s.poll() # get current values
+            return s
+        except linuxcnc.error as detail:
+            log.error(f'Error: {detail}')
+            sys.exit(1)  
 
 ################################
 # required handler boiler code #
