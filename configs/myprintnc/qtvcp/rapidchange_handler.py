@@ -933,7 +933,7 @@ class HandlerClass:
         ACTION.CALL_MDI_WAIT( f"G53 G0 X[{self.c[AtcHalPin.X_MANUAL_CHANGE_POS]}] Y[{self.c[AtcHalPin.Y_MANUAL_CHANGE_POS]}]")
         
         #hal.set_p('qtdragon.manualtoolok', "1")
-        info = _translate("HandlerClass",f"Tool #{t[0]} loaded? Press OK to continue, or Cancel to abort.")
+        info = _translate("HandlerClass",f"Load Tool #{t[0]} into the spindle. Then, press OK to continue, or Cancel to abort.")
         mess = {'NAME':'MESSAGE', 'ID':'_toolloaded_', 'MESSAGE':'TOOL LOADED', 'MORE':info, 'TYPE':'OKCANCEL'}
         ACTION.CALL_DIALOG(mess)
         
