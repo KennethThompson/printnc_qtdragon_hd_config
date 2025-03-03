@@ -934,7 +934,7 @@ class HandlerClass:
         
         #hal.set_p('qtdragon.manualtoolok', "1")
         info = _translate("HandlerClass",f"Load Tool #{t[0]} into the spindle. Then, press OK to continue, or Cancel to abort.")
-        mess = {'NAME':'MESSAGE', 'ID':'_toolloaded_', 'MESSAGE':'TOOL LOADED', 'MORE':info, 'TYPE':'OKCANCEL'}
+        mess = {'NAME':'MESSAGE', 'ID':'_toolloaded_', 'MESSAGE':'LOAD TOOL', 'MORE':info, 'TYPE':'OKCANCEL'}
         ACTION.CALL_DIALOG(mess)
         
 
