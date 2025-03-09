@@ -863,7 +863,6 @@ class HandlerClass:
                 self.w.lblToolNoL.setText('EMPTY')
                 self.currentTool = 0
                 self.currentToolPocketNo = 0
-                print(f'Setting current tool pocket to 0')
                 self.setPinValue(pinName=AtcHalPin.CURRENT_TOOL_POCKET, pinVal=0)
                 self.w.lblToolPocket.setText('NONE')
                 self.w.btnDropTool.setEnabled(False)
