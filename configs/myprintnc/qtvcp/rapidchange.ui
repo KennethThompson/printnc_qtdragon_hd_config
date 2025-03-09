@@ -1241,7 +1241,7 @@
             <item row="4" column="0" colspan="2">
              <widget class="QLabel" name="label">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;** &lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; color:#a51d2d;&quot;&gt;AFTER MAKING CHANGES, &lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; text-decoration: underline; color:#a51d2d;&quot;&gt;RESTART&lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; color:#a51d2d;&quot;&gt; LINUXCNC TO AVOID SURPRISES&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt; **&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;** &lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; color:#ed333b;&quot;&gt;AFTER MAKING CHANGES, &lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; text-decoration: underline; color:#ed333b;&quot;&gt;RESTART&lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; color:#ed333b;&quot;&gt; LINUXCNC TO AVOID SURPRISES&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt; **&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="wordWrap">
                <bool>true</bool>
