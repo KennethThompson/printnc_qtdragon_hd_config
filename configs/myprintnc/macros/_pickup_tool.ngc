@@ -108,8 +108,10 @@ o910 endwhile
 o913 IF [#3 EQ 2]
     (Abort, Timeout! Tool still in spindle - Aborting!)
 o913 endif
-(print, Succesfully picked up tool from pocket)
+(print, Succesfully picked up tool #<toolno> from pocket #<pocket>)
 M61 Q[#<toolno>] ; Set tool as loaded
+(print, Dwell for 10 seconds to test a theory)
+G4 P10.0 ; dwell for a moment
 (print, Returning to Safe Z Position)
 G53 G0 Z[#<_hal[rapid_atc.safe_z]>] ; Rapid back to Safe Z
 o105 if[#<_hal[rapid_atc.cover_enabled]> EQ 1]
