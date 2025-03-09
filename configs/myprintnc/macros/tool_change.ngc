@@ -46,7 +46,12 @@ o101 if[#<current_pocket> EQ #<new_pocket>]
     ;M72
     o101 return [1]
 o101 endif
-(print, here)
+
+o111 if[#<current_pocket> EQ 0]
+    (print, Hackey work around applied. Current pocket is 0)
+    o111 return [1]
+o111 endif
+
 o102 if [#<current_pocket> EQ 0]
     (print, No tool currently in spindle, proceeding to pickup.. Current pocket = #<current_pocket> current tool = #<tool_in_spindle>)
 o102 else
