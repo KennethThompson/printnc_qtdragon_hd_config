@@ -44,7 +44,7 @@ RunFromLineDialog_sound_type = READY
 
 [BOOK_KEEPING]
 last_loaded_directory = /home/ken/git-repos/printnc_qtdragon_hd_config/configs/myprintnc/macros
-last_loaded_file = /home/ken/git-repos/printnc_qtdragon_hd_config/configs/myprintnc/macros/_pickup_tool.ngc
+last_loaded_file = /home/ken/git-repos/printnc_qtdragon_hd_config/configs/myprintnc/macros/tool_change.ngc
 style_QSS_Path = DEFAULT
 
 [ORIGINOFFSET_SYSTEM_NAMES]
@@ -111,7 +111,7 @@ gcodegraphics-user-lat = 0.0
 gcodegraphics-user-lon = 0.0
 
 [CUSTOM_FORM_ENTRIES]
-Tool to load = 1
+Tool to load = 2
 Laser X = 100.0
 Laser Y = -20.0
 Sensor X = 2.8

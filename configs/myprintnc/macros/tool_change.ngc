@@ -41,9 +41,7 @@ M66 E0 ;L0
 (print, current pocket = #<current_pocket>, new_pocket = #<new_pocket>)
 
 o101 if[#<current_pocket> EQ #<new_pocket>]
-    (print, Current pocket #<current_pocket> is equal to the new pocket #<new_pocket>, measuring tool then returning..)
-    ;o<_auto_probe_tool> call [#<tool_in_spindle>] [#<selected_tool>] [#<current_pocket>] [#<new_pocket>]
-    ;M72
+    (print, Current pocket #<current_pocket> is equal to the new pocket #<new_pocket>, measuring tool then returning PROBE DISABLED FOR TESTING)
     o101 return [1]
 o101 endif
 (print, here)
@@ -71,12 +69,7 @@ o104 else
         (ABORT, Error.  Pickup tool returned with an error #<_value>)
     o105 else
         (print, Successfully picked up tool #<selected_tool> from pocket #<new_pocket>)
-        (print, Calling probe routine..)
-        ;o<_auto_probe_tool> call [#<tool_in_spindle>] [#<selected_tool>] [#<current_pocket>] [#<new_pocket>]
-        ;o106 if[#<_value> NE 1]
-            ;M72
-            (ABORT, Probing failed! Return code = #<_value>)
-        ;o106 endif
+
     o105 endif
 o104 endif
 
