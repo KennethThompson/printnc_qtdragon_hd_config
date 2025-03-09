@@ -1,8 +1,8 @@
 [RAPID_ATC]
 num_pockets = 8
 pocket_offset = -45
-first_pocket_x = 153.95
-first_pocket_y = 269.75
+first_pocket_x = 658
+first_pocket_y = 238
 z_engage = 0
 z_engage_drop_offset = 0
 z_ir_engage = -101.724
@@ -44,7 +44,7 @@ RunFromLineDialog_sound_type = READY
 
 [BOOK_KEEPING]
 last_loaded_directory = /home/ken/git-repos/printnc_qtdragon_hd_config/configs/myprintnc/macros
-last_loaded_file = /home/ken/git-repos/printnc_qtdragon_hd_config/configs/myprintnc/macros/tool_change.ngc
+last_loaded_file = /home/ken/git-repos/printnc_qtdragon_hd_config/configs/myprintnc/macros/_pickup_tool.ngc
 style_QSS_Path = DEFAULT
 
 [ORIGINOFFSET_SYSTEM_NAMES]
@@ -111,7 +111,7 @@ gcodegraphics-user-lat = 0.0
 gcodegraphics-user-lon = 0.0
 
 [CUSTOM_FORM_ENTRIES]
-Tool to load = 0
+Tool to load = 1
 Laser X = 100.0
 Laser Y = -20.0
 Sensor X = 2.8

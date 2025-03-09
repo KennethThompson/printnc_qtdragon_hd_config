@@ -24,6 +24,7 @@ o<_pickup_tool> sub
 ;M73 ; Save and autorestore model states. This will be used only in case of error, otherwise we will invalidate it.
 o100 if[#<_current_tool> NE 0]
     ;M72 ; Restore modal state
+    (PRINT, Tool already in spindle)
     o100 return [-1] ; indicate failure, tool already present
 o100 endif 
 o101 if[#1 EQ 0 OR #1 GT #<_hal[rapid_atc.num_pockets]>]
@@ -117,6 +118,7 @@ o105 if[#<_hal[rapid_atc.cover_enabled]> EQ 1]
     ;M72
     ;o103 return [1]
 o105 endif
+(PRINT, Tool change completed!)
 o<_pickup_tool> return [1] ; Return success
 o<_pickup_tool> endsub
 M2
