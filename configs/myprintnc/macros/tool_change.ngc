@@ -72,11 +72,11 @@ o104 else
     o105 else
         (print, Successfully picked up tool #<selected_tool> from pocket #<new_pocket>)
         (print, Calling probe routine..)
-        o<_auto_probe_tool> call [#<tool_in_spindle>] [#<selected_tool>] [#<current_pocket>] [#<new_pocket>]
-        o106 if[#<_value> NE 1]
+        ;o<_auto_probe_tool> call [#<tool_in_spindle>] [#<selected_tool>] [#<current_pocket>] [#<new_pocket>]
+        ;o106 if[#<_value> NE 1]
             ;M72
             (ABORT, Probing failed! Return code = #<_value>)
-        o106 endif
+        ;o106 endif
     o105 endif
 o104 endif
 
