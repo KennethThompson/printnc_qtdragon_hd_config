@@ -81,6 +81,6 @@ o104 else
 o104 endif
 
 
-(print, End of Program)
+(print, End of Tool Change Program)
 o<tool_change> endsub [1]
 M2
