@@ -41,8 +41,8 @@ M66 E0 ;L0
 (print, current pocket = #<current_pocket>, new_pocket = #<new_pocket>)
 
 o101 if[#<current_pocket> EQ #<new_pocket>]
-    (print, Current pocket is equal to the new pocket, measuing tool then returning..)
-    o<_auto_probe_tool> call [#<tool_in_spindle>] [#<selected_tool>] [#<current_pocket>] [#<new_pocket>]
+    (print, Current pocket #<current_pocket> is equal to the new pocket #<new_pocket>, measuring tool then returning..)
+    ;o<_auto_probe_tool> call [#<tool_in_spindle>] [#<selected_tool>] [#<current_pocket>] [#<new_pocket>]
     ;M72
     o101 return [1]
 o101 endif
