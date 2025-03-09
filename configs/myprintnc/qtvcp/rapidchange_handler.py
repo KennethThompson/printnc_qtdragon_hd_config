@@ -868,7 +868,7 @@ class HandlerClass:
             #s.poll()
             if not self.ok_for_mdi():
                 return
-            if s.tool_in_spindle == 0:
+            if s.tool_in_spindle == 0 and self.currentTool != 0:
                 self.w.lblToolNo.setText('EMPTY')
                 self.w.lblToolNoL.setText('EMPTY')
                 self.currentTool = 0
@@ -876,8 +876,8 @@ class HandlerClass:
                 self.setPinValue(pinName=AtcHalPin.CURRENT_TOOL_POCKET, pinVal=0)
                 # Write directly to motion.analog-out-00 for G-code to read
                 #hal.set_p("motion.analog-out-00", f'{0}')
-                if homed and machine_on:
-                    ACTION.CALL_MDI_WAIT( f"M68 E0 Q0" )
+                #if homed and machine_on:
+                ACTION.CALL_MDI_WAIT( f"M68 E0 Q0" )
                 self.w.lblToolPocket.setText('NONE')
                 self.w.btnDropTool.setEnabled(False)
                 self.w.btnPickupTool.setEnabled(True)
