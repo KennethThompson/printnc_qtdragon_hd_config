@@ -1,0 +1,50 @@
+# System files
+*.pyc
+__pycache__/
+*.o
+*.so
+.DS_Store
+Thumbs.db
+
+# Backup files
+*~
+*.bak
+*.swp
+*.swo
+
+# LinuxCNC specific
+*.var
+*.var.bak
+.halrun/
+.halscope/
+*.comp.so
+*.comp.c
+
+# Qt/QtDragon specific
+*.qm
+*.moc
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.pro.user
+*.pro.user.*
+*.qmlc
+*.jsc
+.qmake.stash
+
+# Log files
+*.log
+*.debug
+/logs/
+
+# Environment and local config
+.env
+.env.local
+*.local.ini
+config.local.yaml
+
+# Build and temporary directories
+/build/
+/dist/
+/tmp/
+.cache/
