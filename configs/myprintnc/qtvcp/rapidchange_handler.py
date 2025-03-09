@@ -27,6 +27,9 @@ import time
 from PyQt5.QtCore import QCoreApplication
 #import debugpy
 import linuxcnc
+
+s = linuxcnc.stat()
+
 import sys
 import hal
 _translate = QCoreApplication.translate
@@ -784,6 +787,10 @@ class HandlerClass:
         command.wait_complete()
 
 
+    def ok_for_mdi(self):
+        s.poll()
+        return not s.estop and s.enabled and (s.homed.count(1) == s.joints) and (s.interp_state == linuxcnc.INTERP_IDLE)
+
     def setPinValue(self, pinName:str, pinVal):
         self.c[pinName] = pinVal
         
@@ -856,27 +863,41 @@ class HandlerClass:
             self.w.gbMacros.setEnabled((homed & machine_on))
             self.w.lblMachineOnNotice.setVisible(not (homed & machine_on))
             
-            s = self.getCurrentStat()
-            s.poll()
+            #s = self.getCurrentStat()
+            #self.s.poll()
+            #s.poll()
+            if not self.ok_for_mdi():
+                return
             if s.tool_in_spindle == 0:
                 self.w.lblToolNo.setText('EMPTY')
                 self.w.lblToolNoL.setText('EMPTY')
                 self.currentTool = 0
                 self.currentToolPocketNo = 0
                 self.setPinValue(pinName=AtcHalPin.CURRENT_TOOL_POCKET, pinVal=0)
+                # Write directly to motion.analog-out-00 for G-code to read
+                #hal.set_p("motion.analog-out-00", f'{0}')
+                if homed and machine_on:
+                    ACTION.CALL_MDI_WAIT( f"M68 E0 Q0" )
                 self.w.lblToolPocket.setText('NONE')
                 self.w.btnDropTool.setEnabled(False)
                 self.w.btnPickupTool.setEnabled(True)
             else:
-                if s.interp_state == linuxcnc.INTERP_IDLE and s.tool_in_spindle != 0:
+                if s.interp_state == linuxcnc.INTERP_IDLE and s.tool_in_spindle != self.currentTool and machine_on and homed:
+                    print(f'Tool change detected. Current tool = {self.currentTool}, new tool = {s.tool_in_spindle}')
                     self.currentTool = s.tool_in_spindle
                     self.w.lblToolNo.setText(str(s.tool_in_spindle))
                     self.w.lblToolNoL.setText(str(s.tool_in_spindle))
                     self.tooldb.load_tool_db() # force a reload to catch any changes
 
                     p = self.getToolPocketByIndex(s.tool_in_spindle)
+                    print(f'Tool lookup returned pocket = {p} for tool {s.tool_in_spindle}')
                     self.currentToolPocketNo = p
-                    self.setPinValue(pinName=AtcHalPin.CURRENT_TOOL_POCKET, pinVal=p)
+
+                    #if self.c[AtcHalPin.CURRENT_TOOL_POCKET] != p:
+                    #if homed and machine_on:
+                        #self.setPinValue(pinName=AtcHalPin.CURRENT_TOOL_POCKET, pinVal=p)
+                        # Write directly to motion.analog-out-00 for G-code to read
+                    ACTION.CALL_MDI_WAIT( f"M68 E0 Q{p}" )
                     self.w.lblToolPocket.setText(str(p))
                     self.w.btnDropTool.setEnabled(True)
                     self.w.btnPickupTool.setEnabled(False)
@@ -982,9 +1003,10 @@ class HandlerClass:
         return tool
     
     def setXYPocketOne(self):
-        stat = self.getCurrentStat()
-        x_pos = round(stat.position[0], 3)
-        y_pos = round(stat.position[1], 3)
+        s.poll()
+        
+        x_pos = round(s.position[0], 3)
+        y_pos = round(s.position[1], 3)
         
         self.w.MAIN.PREFS_.putpref(ConfigElement.FIRST_POCKET_Y, str(x_pos), str, ConfigElement.ATC_SECTION)
         self.firstPocketXInput.setText(str(x_pos))
@@ -992,14 +1014,16 @@ class HandlerClass:
         self.firstPocketYInput.setText(str(y_pos))
         
     def setZEngage(self):
-        stat = self.getCurrentStat()
-        z_pos = round(stat.position[2], 3)
+        #stat = self.getCurrentStat()
+        s.poll()
+        z_pos = round(s.position[2], 3)
         self.w.MAIN.PREFS_.putpref(ConfigElement.Z_ENGAGE, str(z_pos), str, ConfigElement.ATC_SECTION)
         self.zEngageInput.setText(str(z_pos))
 
     def setZIREngage(self):
-        stat = self.getCurrentStat()
-        z_pos = round(stat.position[2], 3)
+        #stat = self.getCurrentStat()
+        s.poll()
+        z_pos = round(s.position[2], 3)
         self.w.MAIN.PREFS_.putpref(ConfigElement.Z_IR_ENGAGE, str(z_pos), str, ConfigElement.ATC_SECTION)
         self.zEngageIRInput.setText(str(z_pos))
 
@@ -1028,14 +1052,14 @@ class HandlerClass:
     def getToolPocketByIndex(self, index):
         return self.tooldb.get_tool_pocket(toolid=index)
         
-    def getCurrentStat(self):
-        try:
-            s = linuxcnc.stat() # create a connection to the status channel
-            s.poll() # get current values
-            return s
-        except linuxcnc.error as detail:
-            log.error(f'Error: {detail}')
-            sys.exit(1)  
+    #def getCurrentStat(self):
+    #    try:
+    #        #s = linuxcnc.stat() # create a connection to the status channel
+    #        self.s.poll() # get current values
+    #        return self.s
+    #    except linuxcnc.error as detail:
+    #        log.error(f'Error: {detail}')
+    #        sys.exit(1)  
 
 ################################
 # required handler boiler code #

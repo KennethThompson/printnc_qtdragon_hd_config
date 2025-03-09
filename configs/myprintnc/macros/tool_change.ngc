@@ -32,6 +32,7 @@ G90 ; Ensure everything that we do is done in absolute coordinates
 G40 ; Cutter comp off, otherwise G53 might go wrong
 G49 ; Cancel tool offset (not needed until the end)
 
+
 #<current_pocket> = #<_hal[rapid_atc.current_tool_pocket]>
 M66 E0 ;L0
 ;M66 E0 L0
@@ -57,6 +58,8 @@ o102 else
         (ABORT, Error.  Drop tool returned with an error #<_value>)
     o103 else
         (print, Successfully dropped tool into pocket #<current_pocket>)
+        ; Set the current pocket to 0 since we just dropped the tool
+        M68 E0 Q0 ; Write 0 to analog output 0 to update current_tool_pocket via HAL
     o103 endif
 o102 endif
 
@@ -71,6 +74,8 @@ o104 else
         (ABORT, Error.  Pickup tool returned with an error #<_value>)
     o105 else
         (print, Successfully picked up tool #<selected_tool> from pocket #<new_pocket>)
+        ; Update the current pocket to new_pocket since we just picked up a tool
+        M68 E0 Q#<new_pocket> ; Write new_pocket to analog output 0 to update current_tool_pocket via HAL
         (print, Calling probe routine..)
         o<_auto_probe_tool> call [#<tool_in_spindle>] [#<selected_tool>] [#<current_pocket>] [#<new_pocket>]
         o106 if[#<_value> NE 1]
