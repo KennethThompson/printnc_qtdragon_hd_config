@@ -1,54 +1,23 @@
-2025-02-25 09:47:37,460 - QTvcp.QTDRAGON_HD_HANDLER - WARNING - QtDragon warning with loading QtWebEngineWidget - is python3-pyqt5.qtwebengine installed?
-2025-02-25 09:47:50,475 - QTvcp.QTVCP.CORE - ERROR - Qhal: Error making new HAL pin: Invalid pin name length "qtdragon./home/ken/linuxcnc/configs/myprintnc/qtvcp/rapidchange.pbXAxis": max = 47 characters
-    /usr/lib/python3/dist-packages/qtvcp/widgets/simple_widgets.py
-    Line 1267
-    Function: _hal_init
-2025-02-25 09:47:50,495 - QTvcp.QTVCP.CORE - ERROR - Qhal: Traceback (most recent call last):
-  File "/usr/lib/python3/dist-packages/qtvcp/core.py", line 156, in newpin
-    p = QPin(_hal.component.newpin(self.comp, *a, **kw))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-hal.error: Invalid pin name length "qtdragon./home/ken/linuxcnc/configs/myprintnc/qtvcp/rapidchange.pbXAxis": max = 47 characters
-
-2025-02-25 09:47:50,496 - QTvcp.QTVCP.CORE - ERROR - Qhal: Error making new HAL pin: Invalid pin name length "qtdragon./home/ken/linuxcnc/configs/myprintnc/qtvcp/rapidchange.yy": max = 47 characters
-    /usr/lib/python3/dist-packages/qtvcp/widgets/simple_widgets.py
-    Line 1267
-    Function: _hal_init
-2025-02-25 09:47:50,496 - QTvcp.QTVCP.CORE - ERROR - Qhal: Traceback (most recent call last):
-  File "/usr/lib/python3/dist-packages/qtvcp/core.py", line 156, in newpin
-    p = QPin(_hal.component.newpin(self.comp, *a, **kw))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-hal.error: Invalid pin name length "qtdragon./home/ken/linuxcnc/configs/myprintnc/qtvcp/rapidchange.yy": max = 47 characters
-
-2025-02-25 09:47:50,499 - QTvcp.QTVCP.CORE - ERROR - Qhal: Error making new HAL pin: Invalid pin name length "qtdragon./home/ken/linuxcnc/configs/myprintnc/qtvcp/rapidchange.ledIRTrigger": max = 47 characters
-    /usr/lib/python3/dist-packages/qtvcp/widgets/state_led.py
-    Line 86
-    Function: _hal_init
-2025-02-25 09:47:50,500 - QTvcp.QTVCP.CORE - ERROR - Qhal: Traceback (most recent call last):
-  File "/usr/lib/python3/dist-packages/qtvcp/core.py", line 156, in newpin
-    p = QPin(_hal.component.newpin(self.comp, *a, **kw))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-hal.error: Invalid pin name length "qtdragon./home/ken/linuxcnc/configs/myprintnc/qtvcp/rapidchange.ledIRTrigger": max = 47 characters
-
-2025-02-25 09:47:50,500 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - INIT qtvcp handler
-2025-02-25 09:47:50,501 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - num_pockets = 6
-2025-02-25 09:47:50,501 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - pocket_offset = -45
-2025-02-25 09:47:50,502 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - first_pocket_x = 474.987
-2025-02-25 09:47:50,502 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - first_pocket_y = 560.160
-2025-02-25 09:47:50,502 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - z_engage = -126.8
-2025-02-25 09:47:50,503 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - z_engage_drop_offset = 0
-2025-02-25 09:47:50,503 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - z_ir_engage = -101.724
-2025-02-25 09:47:50,503 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - z_safe_clearance = 0
-2025-02-25 09:47:50,503 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - cover_hal_dpin = 0
-2025-02-25 09:47:50,504 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - ir_hal_dpin = 0
-2025-02-25 09:47:50,504 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - x_manual_change_pos = 0
-2025-02-25 09:47:50,504 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - y_manual_change_pos = 0
-2025-02-25 09:47:50,504 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - align_axis = X
-2025-02-25 09:47:50,505 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - pickup_rate = 2000
-2025-02-25 09:47:50,505 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - drop_rate = 2000
-2025-02-25 09:47:50,505 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - spindle_speed_pickup = 1500
-2025-02-25 09:47:50,505 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - spindle_speed_drop = 1700
-2025-02-25 09:47:50,506 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - ir_enabled = True
-2025-02-25 09:47:50,506 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - cover_enabled = True
-2025-02-25 09:48:08,311 - QTvcp.QTVCP.WIDGETS.DIALOGMIXIN - ERROR - Calculating geometry of aboutDialog widget using: half. Will use default placement.
-2025-02-25 14:16:01,841 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - Calling cleanup for shutdown..
-2025-02-25 14:16:02,317 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - Calling cleanup for shutdown..
+2025-03-08 19:17:47,709 - QTvcp.QTDRAGON_HD_HANDLER - WARNING - QtDragon warning with loading QtWebEngineWidget - is python3-pyqt5.qtwebengine installed?
+2025-03-08 19:17:50,459 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - INIT qtvcp handler
+2025-03-08 19:17:50,468 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - num_pockets = 8
+2025-03-08 19:17:50,469 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - pocket_offset = -45
+2025-03-08 19:17:50,469 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - first_pocket_x = 153.95
+2025-03-08 19:17:50,470 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - first_pocket_y = 269.75
+2025-03-08 19:17:50,470 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - z_engage = 0
+2025-03-08 19:17:50,470 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - z_engage_drop_offset = 0
+2025-03-08 19:17:50,471 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - z_ir_engage = -101.724
+2025-03-08 19:17:50,471 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - z_safe_clearance = 0
+2025-03-08 19:17:50,472 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - cover_hal_dpin = 0
+2025-03-08 19:17:50,472 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - ir_hal_dpin = 0
+2025-03-08 19:17:50,472 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - x_manual_change_pos = 0
+2025-03-08 19:17:50,473 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - y_manual_change_pos = 0
+2025-03-08 19:17:50,473 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - align_axis = X
+2025-03-08 19:17:50,474 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - pickup_rate = 2000
+2025-03-08 19:17:50,474 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - drop_rate = 2000
+2025-03-08 19:17:50,475 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - spindle_speed_pickup = 1500
+2025-03-08 19:17:50,475 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - spindle_speed_drop = 1700
+2025-03-08 19:17:50,475 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - ir_enabled = False
+2025-03-08 19:17:50,477 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - cover_enabled = False
+2025-03-08 19:17:50,478 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - probe_ht = 40.0
+2025-03-08 19:17:50,478 - QTvcp.RAPIDCHANGE_HANDLER - DEBUG - block_ht = 20.0
