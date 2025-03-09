@@ -111,7 +111,7 @@ gcodegraphics-user-lat = 0.0
 gcodegraphics-user-lon = 0.0
 
 [CUSTOM_FORM_ENTRIES]
-Tool to load = 2
+Tool to load = 3
 Laser X = 100.0
 Laser Y = -20.0
 Sensor X = 2.8
@@ -129,7 +129,7 @@ Z Safe Travel = 10.0
 Eoffset count = 0
 External offsets = False
 Reload program = False
-Reload tool = True
+Reload tool = False
 Use keyboard = False
 Use tool sensor = False
 Use tool touchplate = False

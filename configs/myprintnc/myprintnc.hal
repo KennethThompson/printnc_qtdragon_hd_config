@@ -125,3 +125,4 @@ net estop-out => iocontrol.0.emc-enable-in
 
 #next line is an absolute must for tool change prior to auto-tool measurement (i.e., M6 remap operation)
 net tool-prepare-loopback iocontrol.0.tool-prepare => iocontrol.0.tool-prepared
+net tool-change-loop iocontrol.0.tool-change iocontrol.0.tool-changed

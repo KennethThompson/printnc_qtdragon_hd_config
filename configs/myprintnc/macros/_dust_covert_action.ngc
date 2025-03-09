@@ -13,4 +13,3 @@ o101 endif
 G4 P2.0 ; dwell to allow cover to open/close
 
 o<_dust_cover_action> endsub
-M2

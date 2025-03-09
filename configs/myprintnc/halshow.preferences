@@ -1,14 +1,25 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 1200x509+240+226
+wm geometry . 1200x509+501+321
 placeFrames 0.39974937343358397
 set ::ratio 0.39974937343358397
 set ::old_w_leftf 160
 set ::watchlist {
     pin+motion.digital-in-00
     pin+motion.digital-out-00
-    pin+arduino8266.dust-cover-out
-    pin+arduino8266.ir-sensor-in
+    pin+hal_manualtoolchange.change
+    pin+hal_manualtoolchange.change_button
+    pin+hal_manualtoolchange.changed
+    pin+hal_manualtoolchange.number
+    pin+iocontrol.0.tool-change
+    pin+iocontrol.0.tool-changed
+    pin+iocontrol.0.tool-from-pocket
+    pin+iocontrol.0.tool-number
+    pin+iocontrol.0.tool-prep-index
+    pin+iocontrol.0.tool-prep-number
+    pin+iocontrol.0.tool-prepare
+    pin+iocontrol.0.tool-prepared
+    pin+rapid_atc.current_tool_pocket
 }
 set ::workmode watchhal
 set ::watchInterval 100

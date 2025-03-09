@@ -120,4 +120,3 @@ o105 if[#<_hal[rapid_atc.cover_enabled]> EQ 1]
 o105 endif
 o<_drop_tool> return [1] ; return success
 o<_drop_tool> endsub
-M2

@@ -90,4 +90,3 @@ G43
 
 ; signal success be returning a value > 0:
 o<_auto_probe_tool> endsub [1]
-m2

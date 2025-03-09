@@ -17,4 +17,3 @@ o101 endif
 (print, mounteds tool = #<_current_tool>)
 G61 ; Use exact stop mode
 o<_current_tool_info> endsub
-M2

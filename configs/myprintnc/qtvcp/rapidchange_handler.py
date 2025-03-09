@@ -181,10 +181,10 @@ class HandlerClass:
         self.currentToolPocketNo = 0
         
         # Create HAL pins for monitoring tool change
-        self.hal.newpin("tool_change_active", hal.HAL_BIT, hal.HAL_OUT)
-        self.hal.newpin("tool_number", hal.HAL_S32, hal.HAL_OUT)
-        self.hal["tool_change_active"] = False
-        self.hal["tool_number"] = 0
+        #self.hal.newpin("tool_change_active", hal.HAL_BIT, hal.HAL_OUT)
+        #self.hal.newpin("tool_number", hal.HAL_S32, hal.HAL_OUT)
+        #self.hal["tool_change_active"] = False
+        #self.hal["tool_number"] = 0
         
 
 
@@ -863,12 +863,13 @@ class HandlerClass:
                 self.w.lblToolNoL.setText('EMPTY')
                 self.currentTool = 0
                 self.currentToolPocketNo = 0
+                print(f'Setting current tool pocket to 0')
                 self.setPinValue(pinName=AtcHalPin.CURRENT_TOOL_POCKET, pinVal=0)
                 self.w.lblToolPocket.setText('NONE')
                 self.w.btnDropTool.setEnabled(False)
                 self.w.btnPickupTool.setEnabled(True)
             else:
-                if s.interp_state == linuxcnc.INTERP_IDLE:
+                if s.interp_state == linuxcnc.INTERP_IDLE and s.tool_in_spindle != 0:
                     self.currentTool = s.tool_in_spindle
                     self.w.lblToolNo.setText(str(s.tool_in_spindle))
                     self.w.lblToolNoL.setText(str(s.tool_in_spindle))
