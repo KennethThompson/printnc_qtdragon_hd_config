@@ -485,7 +485,7 @@ class HandlerClass:
             else:
                 self.w.pbYAxis.setChecked(True)
                 self.w.pbXAxis.setChecked(False)
-                self.c[AtcHalPin.ALIGN_AXIS] = 0
+                self.c[AtcHalPin.ALIGN_AXIS] = 1
 
             self.w.pbXAxis.clicked.connect(
                 lambda: (self.w.MAIN.PREFS_.putpref(ConfigElement.ALIGN_AXIS, 'X', str, ConfigElement.ATC_SECTION),
